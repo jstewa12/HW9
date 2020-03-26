@@ -102,13 +102,11 @@
         }
 
         function filter() {
-            alert("Called filter");
             var sel = document.getElementById("genre");
             option = sel.options[sel.selectedIndex].value;
             for (i in setlist.coverSongs) {
                 for (j in setlist.coverSongs[i]["music genre(s)"]) {
                     if (setlist.coverSongs[i]["music genre(s)"][j] == option) {
-                        alert(setlist.coverSongs[i]["title"]);
                         document.write(setlist.coverSongs[i]["title"]);
                         document.write("<br>By ");
                         document.write(setlist.coverSongs[i]["artist name"]);
@@ -125,9 +123,10 @@
                 '<option value="Rock">Rock</option>' +
                 '<option value="Country">Country</option>' +
                 '<option value="Alternative">Alternative</option>' +
-                '<option value="R&B">R&B</option> </select><br />' +
-                '<input type="button" id="filter" value="Filter" />'
+                '<option value="R&B">R&B</option></select><br />' +
+                '<input type="button" id="filter" value="Filter" /><br />'
                 );
+            document.getElementById("filter").addEventListener("click", filter);
         }
     </script>
     <form>
