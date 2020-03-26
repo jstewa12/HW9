@@ -10,81 +10,81 @@
         setlist = {
             'coverSongs':[
                 {                                   // 1
-                    'artist name'   : ['Joji'],
+                    'artist(s)'     : ['Joji'],
                     'title'         : 'SLOW DANCING IN THE DARK',
-                    'music genre(s)': ['Soul', 'R&B'],
+                    'genre(s)'      : ['Soul', 'R&B'],
                     'year released' : 2018
                 },
                 {                                   // 2
-                    'artist name'   : ['Dua Lipa'],
+                    'artist(s)'     : ['Dua Lipa'],
                     'title'         : 'PHYSICAL',
-                    'music genre(s)': ['Pop', 'Synth-Pop', 'Power Pop', 'Future Pop'],
+                    'genre(s)'      : ['Pop', 'Synth-Pop', 'Power Pop', 'Future Pop'],
                     'year released' : 2020
                 },
                 {                                   // 3
-                    'artist name'   : ['Foreigner'],
+                    'artist(s)'     : ['Foreigner'],
                     'title'         : 'JUKE BOX HERO',
-                    'music genre(s)': ['Rock', 'Hard Rock'],
+                    'genre(s)'      : ['Rock', 'Hard Rock'],
                     'year released' : 1982
                 },
                 {                                   // 4
-                    'artist name'   : ['Pabllo Vittar', 'Charli XCX'],
+                    'artist(s)'     : ['Pabllo Vittar', 'Charli XCX'],
                     'title'         : 'FLASH POSE',
-                    'music genre(s)': ['Pop'],
+                    'genre(s)'      : ['Pop'],
                     'year released' : 2019,
                 },
                 {                                   // 5
-                    'artist name'   : ['Overcoats'],
+                    'artist(s)'     : ['Overcoats'],
                     'title'         : 'NIGHTTIME HUNGER',
-                    'music genre(s)': ['Alternative'],
+                    'genre(s)'      : ['Alternative'],
                     'year released' : 2016,
                 },
                 {                                   // 6
-                    'artist name'   : ['Fleetwood Mac'],
+                    'artist(s)'     : ['Fleetwood Mac'],
                     'title'         : 'DREAMS',
-                    'music genre(s)': ['Rock', 'Soft Rock'],
+                    'genre(s)'      : ['Rock', 'Soft Rock'],
                     'year released' : 1977,
                 },
                 {                                   // 7
-                    'artist name'   : ['Sufjan Stevens'],
+                    'artist(s)'     : ['Sufjan Stevens'],
                     'title'         : 'MYSTERY OF LOVE',
-                    'music genre(s)': ['Acoustic', 'Pop'],
+                    'genre(s)'      : ['Acoustic', 'Pop'],
                     'year released' : 2017,
                 },
                 {                                   // 8
-                    'artist name'   : ['BENEE', 'Gus Dapperton'],
+                    'artist(s)'     : ['BENEE', 'Gus Dapperton'],
                     'title'         : 'SUPALONELY',
-                    'music genre(s)': ['Alternative'],
+                    'genre(s)'      : ['Alternative'],
                     'year released' : 2019,
                 },
                 {                                   // 9
-                    'artist name'   : ['Lynyrd Skynyrd'],
+                    'artist(s)'     : ['Lynyrd Skynyrd'],
                     'title'         : 'FREE BIRD',
-                    'music genre(s)': ['Rock', 'Hard Rock'],
+                    'genre(s)'      : ['Rock', 'Hard Rock'],
                     'year released' : 1973,
                 },
                 {                                   // 10
-                    'artist name'   : ['Kacey Musgraves'],
+                    'artist(s)'     : ['Kacey Musgraves'],
                     'title'         : 'SLOW BURN',
-                    'music genre(s)': ['Country'],
+                    'genre(s)'      : ['Country'],
                     'year released' : 2018,
                 },
                 {                                   // 11
-                    'artist name'   : ['Lorde'],
+                    'artist(s)'     : ['Lorde'],
                     'title'         : 'RIBS',
-                    'music genre(s)': ['Pop', 'Alternative', 'Electronica'],
+                    'genre(s)'      : ['Pop', 'Alternative', 'Electronica'],
                     'year released' : 2013,
                 },
                 {                                   // 12
-                    'artist name'   : ['Doja Cat'],
+                    'artist(s)'     : ['Doja Cat'],
                     'title'         : 'SAY SO',
-                    'music genre(s)': ['Pop', 'R&B'],
+                    'genre(s)'      : ['Pop', 'R&B'],
                     'year released' : 1973,
                 },
                 {                                   // 13
-                    'artist name'   : ['Labrinth'],
+                    'artist(s)'     : ['Labrinth'],
                     'title'         : 'STILL DONT KNOW MY NAME',
-                    'music genre(s)': ['Pop', 'Soundtrack'],
+                    'genre(s)'      : ['Pop', 'Soundtrack'],
                     'year released' : 2019,
                 }
             ]
@@ -93,11 +93,11 @@
         for (i in setlist.coverSongs) {
             document.write(setlist.coverSongs[i]["title"]);
             document.write("<br>By ");
-            document.write(setlist.coverSongs[i]["artist name"]);
+            for (j in setlist.coverSongs[i]) document.write(setlist.coverSongs[i]["artist(s)"][j] + "");
             document.write("<br>Released in ");
             document.write(setlist.coverSongs[i]["year released"]);
             document.write("<br>Genre(s): ")
-            document.write(setlist.coverSongs[i]["music genre(s)"]);
+            for (j in setlist.coverSongs[i]) document.write(setlist.coverSongs[i]["genre(s)"][j]); + "");
             document.write("<br><br>");
         }
 
@@ -105,15 +105,15 @@
             var sel = document.getElementById("genre");
             option = sel.options[sel.selectedIndex].value;
             for (i in setlist.coverSongs) {
-                for (j in setlist.coverSongs[i]["music genre(s)"]) {
-                    if (setlist.coverSongs[i]["music genre(s)"][j] == option) {
+                for (j in setlist.coverSongs[i]["genre(s)"]) {
+                    if (setlist.coverSongs[i]["genre(s)"][j] == option) {
                         document.write(setlist.coverSongs[i]["title"]);
                         document.write("<br>By ");
-                        document.write(setlist.coverSongs[i]["artist name"]);
+                        for (j in setlist.coverSongs[i]) document.write(setlist.coverSongs[i]["artist(s)"][j] + "");
                         document.write("<br>Released in ");
                         document.write(setlist.coverSongs[i]["year released"]);
                         document.write("<br>Genre(s): ")
-                        document.write(setlist.coverSongs[i]["music genre(s)"]);
+                        for (j in setlist.coverSongs[i]) document.write(setlist.coverSongs[i]["genre(s)"][j]); + "");
                         document.write("<br><br>");
                     }
                 }
