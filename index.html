@@ -5,7 +5,7 @@
     <title>CoverTheeBand Setlist 2</title>
 </head>
 <body>
-    <h1 >CoverTheeBand Setlist 2: 2 Cover 2 Band</h1>
+    <h1>CoverTheeBand Setlist 2: 2 Cover 2 Band</h1>
     <script language="javascript">
         setlist = {
             'coverSongs':[
@@ -93,32 +93,41 @@
         for (i in setlist.coverSongs) {
             document.write(setlist.coverSongs[i]["title"]);
             document.write("<br>By ");
-            for (j in setlist.coverSongs[i]["artist(s)"]) document.write(setlist.coverSongs[i]["artist(s)"][j] + "");
+            document.write(setlist.coverSongs[i]["artist(s)"][0]);
+            for (j = 1; j < setlist.coverSongs[i]["artist(s)"].length; j++)
+                document.write(", " + setlist.coverSongs[i]["artist(s)"][j]);
             document.write("<br>Released in ");
             document.write(setlist.coverSongs[i]["year released"]);
             document.write("<br>Genre(s): ")
-            for (j in setlist.coverSongs[i]["genre(s)"]) document.write(setlist.coverSongs[i]["genre(s)"][j]); + "");
+            document.write(setlist.coverSongs[i]["genre(s)"][0]);
+            for (j = 1; j < setlist.coverSongs[i]["genre(s)"].length; j++)
+                document.write(", " + setlist.coverSongs[i]["genre(s)"][j]);
             document.write("<br><br>");
         }
 
         function filter() {
             var sel = document.getElementById("genre");
             option = sel.options[sel.selectedIndex].value;
+            document.write("<h1 >CoverTheeBand Setlist 2: 2 Cover 2 Band</h1>");
             for (i in setlist.coverSongs) {
                 for (j in setlist.coverSongs[i]["genre(s)"]) {
                     if (setlist.coverSongs[i]["genre(s)"][j] == option) {
                         document.write(setlist.coverSongs[i]["title"]);
                         document.write("<br>By ");
-                        for (j in setlist.coverSongs[i]["artist(s)"]) document.write(setlist.coverSongs[i]["artist(s)"][j] + "");
+                        document.write(setlist.coverSongs[i]["artist(s)"][0]);
+                        for (j = 1; j < setlist.coverSongs[i]["artist(s)"].length; j++)
+                            document.write(", " + setlist.coverSongs[i]["artist(s)"][j]);
                         document.write("<br>Released in ");
                         document.write(setlist.coverSongs[i]["year released"]);
                         document.write("<br>Genre(s): ")
-                        for (j in setlist.coverSongs[i]["genre(s)"]) document.write(setlist.coverSongs[i]["genre(s)"][j]); + "");
+                        document.write(setlist.coverSongs[i]["genre(s)"][0]);
+                        for (j = 1; j < setlist.coverSongs[i]["genre(s)"].length; j++)
+                            document.write(", " + setlist.coverSongs[i]["genre(s)"][j]);
                         document.write("<br><br>");
                     }
                 }
             }
-            
+
             document.write('<form><select id="genre" name="genre" size=5>' +
                 '<option value="Pop">Pop</option>' +
                 '<option value="Rock">Rock</option>' +
@@ -127,7 +136,7 @@
                 '<option value="R&B">R&B</option></select><br />' +
                 '<input type="button" id="filter" value="Filter" /></form><br />'
                 );
-            
+
             document.getElementById("filter").addEventListener("click", filter);
             document.close();
         }
