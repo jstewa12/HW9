@@ -118,13 +118,13 @@
                     }
                 }
             }
-            document.write('<select id="genre" name="genre" size=5>' +
+            document.write('<form><select id="genre" name="genre" size=5>' +
                 '<option value="Pop">Pop</option>' +
                 '<option value="Rock">Rock</option>' +
                 '<option value="Country">Country</option>' +
                 '<option value="Alternative">Alternative</option>' +
                 '<option value="R&B">R&B</option></select><br />' +
-                '<input type="button" id="filter" value="Filter" /><br />'
+                '<input type="button" id="filter" value="Filter" /></form><br />'
                 );
             document.getElementById("filter").addEventListener("click", filter);
         }
