@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>What</title>
+</head>
+<body>
+    <h1 >CoverTheeBand Setlist 2: To Cover To Band</h1>
+    <script language="javascript">
+        setlist = {
+            'coverSongs':[
+                {                                   // 1
+                    'artist name'   : 'Joji',
+                    'title'         : 'SLOW DANCING IN THE DARK',
+                    'music genre(s)': ['Soul', 'R&B'],
+                    'year released' : 2018
+                },
+                {                                   // 2
+                    'artist name'   : 'Dua Lipa',
+                    'title'         : 'PHYSICAL',
+                    'music genre(s)': ['Pop'],
+                    'year released' : 2020
+                },
+                {                                   // 3
+                    'artist name'   : 'Foreigner',
+                    'title'         : 'JUKE BOX HERO',
+                    'music genre(s)': ['Rock'],
+                    'year released' : 1982
+                },
+                {                                   // 4
+                    'artist name'   : 'Pabllo Vittar, Charli XCX',
+                    'title'         : 'FLASH POSE',
+                    'music genre(s)': ['Pop'],
+                    'year released' : 2019,
+                },
+                {                                   // 5
+                    'artist name'   : 'Fleetwood Mac',
+                    'title'         : 'DREAMS',
+                    'music genre(s)': ['Rock'],
+                    'year released' : 1977,
+                },
+                {                                   // 6
+                    'artist name'   : 'Overcoats',
+                    'title'         : 'NIGHTTIME HUNGER',
+                    'music genre(s)': ['Alternative'],
+                    'year released' : 2016,
+                },
+                {                                   // 7
+                    'artist name'   : 'Sufjan Stevens',
+                    'title'         : 'MYSTERY OF LOVE',
+                    'music genre(s)': ['Acoustic'],
+                    'year released' : 2017,
+                },
+                {                                   // 8
+                    'artist name'   : 'Supertramp',
+                    'title'         : 'SCHOOL',
+                    'music genre(s)': ['Rock'],
+                    'year released' : 1974,
+                },
+                {                                   // 9
+                    'artist name'   : 'Kacey Musgraves',
+                    'title'         : 'SLOW BURN',
+                    'music genre(s)': ['Country'],
+                    'year released' : 2018,
+                },
+                {                                   // 10
+                    'artist name'   : 'Lorde',
+                    'title'         : 'RIBS',
+                    'music genre(s)': ['Pop', 'Alternative'],
+                    'year released' : 2013,
+                },
+                {                                   // 11
+                    'artist name'   : 'Lynyrd Skynyrd',
+                    'title'         : 'FREE BIRD',
+                    'music genre(s)': ['Rock'],
+                    'year released' : 1973,
+                },
+                {                                   // 11
+                    'artist name'   : 'Doja Cat',
+                    'title'         : 'SAY SO',
+                    'music genre(s)': ['Soul', 'R&B'],
+                    'year released' : 1973,
+                },
+                {                                   // 12
+                    'artist name'   : 'Labrinth',
+                    'title'         : 'STILL DONT KNOW MY NAME',
+                    'music genre(s)': ['Pop'],
+                    'year released' : 2019,
+                }
+            ]
+        }
+
+        for (i in setlist.coverSongs) {
+            document.write(setlist.coverSongs[i]["title"]);
+            document.write("<br>By ");
+            document.write(setlist.coverSongs[i]["artist name"]);
+            document.write("<br>Released in ");
+            document.write(setlist.coverSongs[i]["year released"]);
+            document.write("<br>Genre(s): ")
+            document.write(setlist.coverSongs[i]["music genre(s)"]);
+            document.write("<br><br>");
+        }
+
+        function filter() {
+            alert("Called filter");
+            var sel = document.getElementById("genre");
+            option = sel.options[sel.selectedIndex].value;
+            for (i in setlist.coverSongs) {
+                for (j in setlist.coverSongs[i]["music genre(s)"]) {
+                    if (setlist.coverSongs[i]["music genre(s)"][j] == option) {
+                        alert(setlist.coverSongs[i]["title"]);
+                        document.write(setlist.coverSongs[i]["title"]);
+                        document.write("<br>By ");
+                        document.write(setlist.coverSongs[i]["artist name"]);
+                        document.write("<br>Released in ");
+                        document.write(setlist.coverSongs[i]["year released"]);
+                        document.write("<br>Genre(s): ")
+                        document.write(setlist.coverSongs[i]["music genre(s)"]);
+                        document.write("<br><br>");
+                    }
+                }
+            }
+            document.write('<select id="genre" name="genre" size=5>' +
+                '<option value="Pop">Pop</option>' +
+                '<option value="Rock">Rock</option>' +
+                '<option value="Country">Country</option>' +
+                '<option value="Alternative">Alternative</option>' +
+                '<option value="R&B">R&B</option> </select><br />' +
+                '<input type="button" id="filter" value="Filter" />'
+                );
+        }
+    </script>
+    <form>
+        <select id="genre" name="genre" size=5>
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
+            <option value="Country">Country</option>
+            <option value="Alternative">Alternative</option>
+            <option value="R&B">R&B</option>
+        </select>
+        <br />
+        <input type="button" id="filter" value="Filter" />
+        <script language="javascript">
+            document.getElementById("filter").addEventListener("click", filter);
+        </script>
+    </form>
+</body>
+</html>
