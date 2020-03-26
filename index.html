@@ -93,11 +93,11 @@
         for (i in setlist.coverSongs) {
             document.write(setlist.coverSongs[i]["title"]);
             document.write("<br>By ");
-            for (j in setlist.coverSongs[i]) document.write(setlist.coverSongs[i]["artist(s)"][j] + "");
+            for (j in setlist.coverSongs[i]["artist(s)"]) document.write(setlist.coverSongs[i]["artist(s)"][j] + "");
             document.write("<br>Released in ");
             document.write(setlist.coverSongs[i]["year released"]);
             document.write("<br>Genre(s): ")
-            for (j in setlist.coverSongs[i]) document.write(setlist.coverSongs[i]["genre(s)"][j]); + "");
+            for (j in setlist.coverSongs[i]["genre(s)"]) document.write(setlist.coverSongs[i]["genre(s)"][j]); + "");
             document.write("<br><br>");
         }
 
@@ -109,11 +109,11 @@
                     if (setlist.coverSongs[i]["genre(s)"][j] == option) {
                         document.write(setlist.coverSongs[i]["title"]);
                         document.write("<br>By ");
-                        for (j in setlist.coverSongs[i]) document.write(setlist.coverSongs[i]["artist(s)"][j] + "");
+                        for (j in setlist.coverSongs[i]["artist(s)"]) document.write(setlist.coverSongs[i]["artist(s)"][j] + "");
                         document.write("<br>Released in ");
                         document.write(setlist.coverSongs[i]["year released"]);
                         document.write("<br>Genre(s): ")
-                        for (j in setlist.coverSongs[i]) document.write(setlist.coverSongs[i]["genre(s)"][j]); + "");
+                        for (j in setlist.coverSongs[i]["genre(s)"]) document.write(setlist.coverSongs[i]["genre(s)"][j]); + "");
                         document.write("<br><br>");
                     }
                 }
