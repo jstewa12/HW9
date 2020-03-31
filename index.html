@@ -90,6 +90,11 @@
             ]
         }
 
+        for (s in setlist.coverSongs) {
+            songString = JSON.stringify(setlist[s]);
+            document.write(songString + "<br>");
+        }
+        
         for (i in setlist.coverSongs) {
             document.write(setlist.coverSongs[i]["title"]);
             document.write("<br>By ");
